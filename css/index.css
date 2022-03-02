@@ -1,0 +1,14 @@
+
+.b{
+    display: flex;
+    justify-content: left;
+    
+}
+
+.video_wrapper{
+    width: 640px;
+    height: 480px; 
+    display:table-cell;
+    background-color: black;
+}
+ 
