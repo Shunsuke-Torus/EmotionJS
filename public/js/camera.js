@@ -2,7 +2,7 @@ const cc_test = document.getElementById("cc_test");
 const ll_video = document.getElementById("ll_video");
 const stop = document.getElementById("stop");
 
-cc_test.addEventListener("click",()=>{
+function camera_on(){
     navigator.mediaDevices.getUserMedia({
         video: true,
         audio: false
@@ -15,16 +15,14 @@ cc_test.addEventListener("click",()=>{
         console.error("mediaDevice.getUserMedia() error:",error);
         return;
     });
+}
 
-},false);
-
-stop.addEventListener("click",()=>{
+function camera_off(){
     let stream = document.getElementById("ll_video").srcObject;
     let tracks = stream.getTracks();
     tracks.forEach(track => {
         track.stop();
     });
     document.getElementById("ll_video").srcObject = null;
-
-},false);
+}
 
