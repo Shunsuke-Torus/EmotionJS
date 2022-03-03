@@ -118,7 +118,6 @@ function emotion(data_json){//1人
         $("myChart"+i).ready(function() {
             let canvas = document.getElementById("myChart"+i);
             var ctx = document.getElementById("myChart"+i).getContext("2d");
-            console.log(ctx);
             let myChart = new Chart(ctx,{
                 type: "pie",
                 data: {
