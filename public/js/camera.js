@@ -1,5 +1,5 @@
 const cc_test = document.getElementById("cc_test");
-const ll_video = document.getElementById("ll_video");
+const video = document.getElementById("video");
 const stop = document.getElementById("stop");
 
 function camera_on(){
@@ -8,7 +8,7 @@ function camera_on(){
         audio: false
     })
     .then(function(stream){
-        document.getElementById("ll_video").srcObject = stream;
+        document.getElementById("video").srcObject = stream;
     })
     .catch(function(err){
         //error
@@ -18,11 +18,11 @@ function camera_on(){
 }
 
 function camera_off(){
-    let stream = document.getElementById("ll_video").srcObject;
+    let stream = document.getElementById("video").srcObject;
     let tracks = stream.getTracks();
     tracks.forEach(track => {
         track.stop();
     });
-    document.getElementById("ll_video").srcObject = null;
+    document.getElementById("video").srcObject = null;
 }
 
